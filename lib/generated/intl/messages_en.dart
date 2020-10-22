@@ -21,13 +21,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function> {
-    "about" : MessageLookupByLibrary.simpleMessage("关于"),
+    "about" : MessageLookupByLibrary.simpleMessage("about"),
     "appName" : MessageLookupByLibrary.simpleMessage("YHI"),
-    "cancel" : MessageLookupByLibrary.simpleMessage("取消"),
-    "home" : MessageLookupByLibrary.simpleMessage("主页"),
-    "language" : MessageLookupByLibrary.simpleMessage("语言"),
-    "ok" : MessageLookupByLibrary.simpleMessage("确定"),
-    "setting" : MessageLookupByLibrary.simpleMessage("设置"),
-    "theme" : MessageLookupByLibrary.simpleMessage("主题")
+    "cancel" : MessageLookupByLibrary.simpleMessage("cancel"),
+    "home" : MessageLookupByLibrary.simpleMessage("home"),
+    "language" : MessageLookupByLibrary.simpleMessage("home"),
+    "ok" : MessageLookupByLibrary.simpleMessage("ok"),
+    "setting" : MessageLookupByLibrary.simpleMessage("setting"),
+    "theme" : MessageLookupByLibrary.simpleMessage("theme")
   };
 }

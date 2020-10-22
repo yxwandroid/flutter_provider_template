@@ -112,14 +112,9 @@ class _SettingPageState extends State<SettingPage> {
                   initiallyExpanded: false,
                   children: [
                     Wrap(
-//                      runAlignment: ,
-//                      spacing: 80.0, // 主轴(水平)方向间距
-//                      runSpacing: 30.0, // 纵轴（垂直）方向间距
                       spacing: 5,
                       runSpacing: 5,
-//                      alignment: WrapAlignment.start,
                       crossAxisAlignment: WrapCrossAlignment.center,
-//                      runAlignment: WrapAlignment.start,
                       children: allTheme.map<Widget>(_buildItem).toList(),
                     )
                   ],
