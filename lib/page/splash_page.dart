@@ -6,6 +6,8 @@ import 'package:flutter_provider_template/navigator_utils.dart';
 import 'package:flutter_provider_template/common/utils/screen_util.dart';
 import 'package:flutter_provider_template/common/widget/drag_debug_widget.dart';
 
+import 'home_page.dart';
+
 class SplashPage extends StatefulWidget {
   static final String sName = "/";
 
@@ -18,9 +20,7 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-
     init();
-
     if (Config.DEBUG_ENTER) {
       Future.delayed(Duration(milliseconds: Config.JUMP_PAGE_DELAY), () {
         _showDebugEnter();
@@ -28,23 +28,20 @@ class _SplashPageState extends State<SplashPage> {
     }
 
 
+    Future.delayed(Duration(milliseconds: Config.JUMP_PAGE_DELAY), () {
+        NavigatorUtils.getInstance()
+            .pushReplacementNamed(context, HomePage.sName);
+    });
   }
 
   init() {
     DBProvider.db.init("user_db");
   }
 
-  void _initBanner() {
-
-  }
-
-
 
   @override
   void didChangeDependencies() async {
     super.didChangeDependencies();
-    Log.i("SplashPage", "------didChangeDependencies");
-    //("初始化应用的时候初始化store管理者");
     NavigatorUtils.getInstance().setContext(context);
     // 初始化屏幕信息
     ScreenUtil.getInstance().init(context);
@@ -62,10 +59,9 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.black,
+      color: Colors.white,
       child: Stack(
         children: <Widget>[
-
         ],
       ),
     );

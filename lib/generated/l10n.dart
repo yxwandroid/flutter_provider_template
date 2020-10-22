@@ -53,6 +53,56 @@ class S {
     );
   }
 
+  /// `设置`
+  String get setting {
+    return Intl.message(
+      '设置',
+      name: 'setting',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `主题`
+  String get theme {
+    return Intl.message(
+      '主题',
+      name: 'theme',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `关于`
+  String get about {
+    return Intl.message(
+      '关于',
+      name: 'about',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `主页`
+  String get home {
+    return Intl.message(
+      '主页',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `语言`
+  String get language {
+    return Intl.message(
+      '语言',
+      name: 'language',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `确定`
   String get ok {
     return Intl.message(

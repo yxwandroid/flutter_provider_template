@@ -2,5 +2,9 @@
 class Res {
   static const String icon = "images/icon.png";
   static const String icon_back = "images/icon_back.png";
-  static const String image_company = "images/about/image_company.png";
+  static const String check = "images/common/check.png";
+  static const String checkbox_default = "images/common/checkbox_default.png";
+  static const String next_ico = "images/common/next_ico.png";
+  static const String icon_language = "images/setting/icon_language.png";
+  static const String icon_theme = "images/setting/icon_theme.png";
 }

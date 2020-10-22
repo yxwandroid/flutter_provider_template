@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_provider_template/page/about_page.dart';
+import 'package:flutter_provider_template/page/home_page.dart';
+import 'package:flutter_provider_template/page/language_page.dart';
+import 'package:flutter_provider_template/page/setting_page.dart';
 import 'package:flutter_provider_template/page/splash_page.dart';
 
 import 'common/config/config.dart';
@@ -12,7 +16,10 @@ class NavigatorUtils extends NavigatorObserver {
   /*配置routes*/
   static Map<String, WidgetBuilder> configRoutes = {
     SplashPage.sName: (context) => SplashPage(),
-    // HomePage.sName: (context) => HomePage(),
+    HomePage.sName: (context) => HomePage(),
+    SettingPage.sName: (context) => SettingPage(),
+    AboutPage.sName: (context) => AboutPage(),
+    LanguagePage.sName: (context) => LanguagePage(),
   };
   static NavigatorUtils navigatorUtils;
   static NavigatorState currentNavigator;
@@ -23,18 +30,13 @@ class NavigatorUtils extends NavigatorObserver {
 
   List<Route> get routes => _mRoutes;
 
-//  static StreamController _streamController;
-
   static NavigatorUtils getInstance() {
     if (navigatorUtils == null) {
       navigatorUtils = new NavigatorUtils();
-//      _streamController = StreamController.broadcast();
     }
 
     return navigatorUtils;
   }
-
-//  StreamController get streamController => _streamController;
 
   setContext(BuildContext context) {
     mContext = context;
@@ -73,16 +75,15 @@ class NavigatorUtils extends NavigatorObserver {
     }
   }
 
-
   // push 页面
-  pushNamedByParam(BuildContext context, String routeName,String param,
+  pushNamedByParam(BuildContext context, String routeName, String param,
       {WidgetBuilder builder, int animDuration, bool fullscreenDialog = false}) {
     if (context != null) mContext = context;
     if (currentNavigator != null) {
       return currentNavigator.push(
         RemoveAnimCupertinoPageRoute(
           builder: builder ?? configRoutes[routeName],
-          settings: RouteSettings(name: routeName,arguments: param),
+          settings: RouteSettings(name: routeName, arguments: param),
           animDuration: animDuration,
           fullscreenDialog: fullscreenDialog,
         ),
@@ -170,12 +171,7 @@ class NavigatorUtils extends NavigatorObserver {
     // 当前页面的navigator
     currentNavigator = _mRoutes[_mRoutes.length - 1].navigator;
     StatusBarUtil.setupStatusBar(_mRoutes[_mRoutes.length - 1]);
-//    _emitListener();
   }
-
-//  _emitListener() {
-//    streamController.sink.add(_mRoutes);
-//  }
 }
 
 class RemoveAnimCupertinoPageRoute extends CupertinoPageRoute {
@@ -187,9 +183,7 @@ class RemoveAnimCupertinoPageRoute extends CupertinoPageRoute {
     RouteSettings settings,
     bool maintainState = true,
     bool fullscreenDialog = false,
-
     this.animDuration,
-
   })  : assert(builder != null),
         assert(maintainState != null),
         assert(fullscreenDialog != null),

@@ -1,5 +1,11 @@
 {
   "appName":"YHI",
   "cancel":"取消",
+  "setting":"设置",
+  "about":"关于",
+  "theme":"主题",
+  "home":"主页",
+  "language":"语言",
   "ok":"确定"
+
 }

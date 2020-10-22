@@ -117,8 +117,6 @@ class _MyAppState extends State<MyApp> {
                 //修改本地语言
                 locale: Locale(languageNotifier.language.languageCode, languageNotifier.language.countryCode),
                 //初始化本地语言
-                // localeResolutionCallback:
-                //     S.delegate.r(fallback: const Locale('zh', 'CN')),
                 localeResolutionCallback: (Locale locale, Iterable<Locale> supportedLocales) {
                   if (locale.languageCode == "zh") {
                     if (locale.toString() == "zh_CN") {
@@ -130,7 +128,6 @@ class _MyAppState extends State<MyApp> {
                   return locale;
                 },
                 initialRoute: SplashPage.sName,
-//                initialRoute: HomePage.sName,
                 routes: NavigatorUtils.configRoutes,
                 builder: (BuildContext context, Widget child) {
                   return FlutterEasyLoading(child: child);
